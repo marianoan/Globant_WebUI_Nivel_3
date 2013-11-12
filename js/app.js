@@ -13,7 +13,7 @@
 
         //Eventos de la vista
         events: {
-            'click .icn_view_data': 'viewData'
+            //'click .icn_view_data': 'viewData'
         },
 
         //Inicializo y traigo la coleccion de contactos
@@ -33,6 +33,7 @@
             this.$input_new_img = this.$('#new_image_input');*/
             
             this.addItem('Watchmen', '200', 'DC Comics', 'http:\/\/kalafudra.files.wordpress.com/2009/03/watchmen-cover.jpg', 'Spain', 'Lebowski ipsum this is quite a pad you got here, man. Completely unspoiled. Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. We ve got a man down, Dude. Quis elit blandit fringilla a ut. I m saying, Cynthias Pomeranian. I m looking after it while Cynthia and Marty Ackerman are in Hawaii. Turpis praesent felis ligula, malesuada suscipit malesuada non, ultrices non. Whose toe was it, Walter? Urna sed orci ipsum, placerat id condimentum rutrum, rhoncus ac lorem aliquam placerat.', 'ECC Ediciones', 'Alan Moore, Dave Gibbons');
+            this.addItem('V of Vendetta', '250', 'DC Comics', 'http:\/\/www.scifinow.co.uk/wp-content/uploads/2010/04/vendetta.jpg', 'Spain', 'Theyre nihilists. Posuere neque, at dignissim magna ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus. Leads, yeah. Ill just check with the boys down at the Crime Lab. Theyve assigned four more detectives to the case, got us working in shifts. Curabitur eu mi sapien, ut. Im not Mr. Lebowski; youre Mr. Lebowski. Im the Dude. Ultricies ipsum morbi eget risus nulla nullam vel nisi enim, vel auctor.', 'ECC Ediciones', 'Alan Moore, David Lloyd');
 
             this.listenTo(this.collection, 'add', this.addOne);
             this.listenTo(this.collection, 'reset', this.addAll);
@@ -77,9 +78,6 @@
             this.collection.each(this.addOne, this);
         },
 
-        viewData: function () {
-            console.log('view user data');
-        }
 
     });
 

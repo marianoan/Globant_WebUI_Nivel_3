@@ -1,26 +1,14 @@
-﻿  <article class="module width_full">
+﻿  <article class="module width_quarter">
     <header>
         <h3><%- title %></h3>
-        <input type="image" class="edit" src="images/icn_edit.png" title="Edit">
-        <input type="image" class="destroy" src="images/icn_trash.png" title="Trash">
+        <input type="image" class="destroy" src="images/icn_basket_add.png" title="Add to cart">
     </header>
     <div class="module_content">
-        <article class="img_movie">
-            <img src="<%- cover %>" alt="" />
-        </article>
-
-        <article class="movie_detail">
-            <div class="module_content">
-                <h2><%- price %></h2>
-                <h3><%- publisher %></h3>
-                <h4><%- country %></h4>
-                <h4><%- printedBy %></h4>
-                <h4><%- authors %></h4>
-                <h4><%- inCart %></h4>
-                <p><%- argument %></p>
-            </div>
-        </article>
-        
-        <div class="clear"></div>
+        <img src="<%- cover %>" alt="" width="290" height="540" />
     </div>
+    <footer>
+        <div class="addLink">
+            <h3>Add to cart</h3>
+        </div>
+    </footer>
 </article><!-- end of stats article -->
