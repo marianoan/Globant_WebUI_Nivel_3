@@ -1,0 +1,52 @@
+﻿  <article class="module width_full">
+    <header>
+        <h3><%- name %></h3>
+        <input type="image" class="edit" src="images/icn_edit.png" title="Edit">
+        <input type="image" class="destroy" src="images/icn_trash.png" title="Trash">
+    </header>
+    <div class="module_content">
+        <article class="img_movie">
+            <img src="<%- img %>" alt="" />
+        </article>
+
+        <article class="movie_detail">
+            <div class="module_content">
+                <h2><%- director %></h2>
+                <h3><%- year %></h3>
+                <h4><%- cast %></h4>
+                <p><%- sinopsis %></p>
+            </div>
+        </article>
+        <article class="movie_edit_detail">
+            <div class="module_content">
+                    <fieldset>
+                        <label>Name</label>
+                        <input type="text" id="edit_name_input" value="<%- name %>">
+                    </fieldset>
+                    <fieldset>
+                        <label>Director</label>
+                        <input type="text" id="edit_director_input" value="<%- director %>">
+                    </fieldset>
+                    <fieldset>
+                        <label>Year</label>
+                        <input type="text" id="edit_year_input" value="<%- year %>">
+                    </fieldset>
+                    <fieldset>
+                        <label>cast</label>
+                        <input type="text" id="edit_cast_input" value="<%- cast %>">
+                    </fieldset>
+                    <fieldset>
+                        <label>Sinopsis</label>
+                        <textarea id="edit_sinopsis_input" rows="10"><%- sinopsis %></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label>Image</label>
+                        <input type="text" id="edit_image_input" value="<%- img %>">
+                    </fieldset>
+                    <div class="clear"></div>
+                    <input type="submit" value="Save" class="alt_btn" id="edit_button">
+            </div>
+        </article>
+        <div class="clear"></div>
+    </div>
+</article><!-- end of stats article -->

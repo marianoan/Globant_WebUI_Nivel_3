@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Topic 7</title>
+	
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
+    <script data-main="js/main" src="js/require.js"></script>
+</head>
+
+<body id="movie_app">
+    <header id="header">
+        <hgroup>
+            <h2 class="section_title">Movie Collectorz</h2>
+        </hgroup>
+    </header> <!-- end of header bar -->
+
+    <section id="secondary_bar"></section><!-- end of secondary bar -->
+
+    <aside id="sidebar" class="column">
+        <h3></h3>
+        <ul class="toggle">
+            <li class="icn_view_movies"><a href="#">List Movies</a></li>
+            <li class="icn_add_movie"><a href="#">New Movie</a></li>
+        </ul>
+    </aside><!-- end of sidebar -->
+
+
+    <section id="main" class="column">
+
+        <h4 class="alert_info" id="alert">Alert</h4>
+
+        <div id="movie_list" class="hidden">
+            
+        </div>
+
+        <div class="clear"></div>
+
+        <article class="module width_full hidden" id="new_movie">
+            <header><h3>New Movie</h3></header>
+            <div class="module_content">
+                <form id="new_contact_form">
+                    <fieldset>
+                        <label>Name</label>
+                        <input type="text" id="new_name_input" placeholder="Movie name">
+                    </fieldset>
+                    <fieldset>
+                        <label>Director</label>
+                        <input type="text" id="new_director_input" placeholder="Movie director">
+                    </fieldset>
+                    <fieldset>
+                        <label>Year</label>
+                        <input type="text" id="new_year_input" placeholder="Movie year">
+                    </fieldset>
+                    <fieldset>
+                        <label>cast</label>
+                        <input type="text" id="new_cast_input" placeholder="Full cast">
+                    </fieldset>
+                    <fieldset>
+                        <label>Sinopsis</label>
+                        <textarea id="new_sinopsis_input" rows="10" placeholder="Sinopsis"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label>Image</label>
+                        <input type="text" id="new_image_input" value="http://placehold.it/370x175" placeholder="Enter the source of the image">
+                    </fieldset>
+                    <div class="clear"></div>
+                </form>
+            </div>
+            <footer>
+                <div class="footer">
+                    <input type="submit" value="Save" class="alt_btn" id="save_button">
+                    <input type="submit" value="Reset" id="reset_button">
+                </div>
+            </footer>
+        </article><!-- end of new conctact -->
+
+        <div class="spacer"></div>
+    </section>
+
+</body>
+</html>
