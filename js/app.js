@@ -2,91 +2,83 @@
   'jquery',
   'underscore',
   'backbone',
-  'collections/Movies',
-  'views/MovieView',
-  'models/Movie'
-], function ($, _, Backbone, Movies, MovieView, Movie) {
+  'collections/Items',
+  'views/ItemView',
+  'models/Item'
+], function ($, _, Backbone, Items, ItemView, Item) {
 
     return Backbone.View.extend({
 
-        el: '#movie_app',
+        el: '#shoppingCartApp',
 
         //Eventos de la vista
         events: {
-            'click #save_button': 'create_movie',
-            'click .icn_view_movies': 'view_movies_list',
-            'click .icn_add_movie': 'add_movie'
+            'click .icn_view_data': 'viewData'
         },
 
         //Inicializo y traigo la coleccion de contactos
         initialize: function () {
-            this.collection = new Movies();
+            this.collection = new Items();
 
             console.log(this.collection);
-            this.$new_movie = this.$('#new_movie');
+            //this.$new_movie = this.$('#new_movie');
             
-            this.$movies_list = this.$('#movie_list');
-            console.log(this.$movies_list);
-            this.$input_new_name = this.$('#new_name_input');
+            this.$itemsList = this.$('#itemsList');
+            //console.log(this.$itemsList);
+            /*this.$input_new_name = this.$('#new_name_input');
             this.$input_new_director = this.$('#new_director_input');
             this.$input_new_year = this.$('#new_year_input');
             this.$input_new_cast = this.$('#new_cast_input');
             this.$input_new_sinopsis = this.$('#new_sinopsis_input');
-            this.$input_new_img = this.$('#new_image_input');
-
-            this.view_movies_list();
+            this.$input_new_img = this.$('#new_image_input');*/
+            
+            this.addItem('Watchmen', '200', 'DC Comics', 'http:\/\/kalafudra.files.wordpress.com/2009/03/watchmen-cover.jpg', 'Spain', 'Lebowski ipsum this is quite a pad you got here, man. Completely unspoiled. Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. We ve got a man down, Dude. Quis elit blandit fringilla a ut. I m saying, Cynthias Pomeranian. I m looking after it while Cynthia and Marty Ackerman are in Hawaii. Turpis praesent felis ligula, malesuada suscipit malesuada non, ultrices non. Whose toe was it, Walter? Urna sed orci ipsum, placerat id condimentum rutrum, rhoncus ac lorem aliquam placerat.', 'ECC Ediciones', 'Alan Moore, Dave Gibbons');
 
             this.listenTo(this.collection, 'add', this.addOne);
             this.listenTo(this.collection, 'reset', this.addAll);
-
+            console.log(this.collection);
 
             this.collection.fetch();
+
+            this.addAll();
         },
 
         //Atributos para un nuevo contacto
-        newAttributes: function () {
+        newAttributes: function (title, price, publisher, cover, country, argument, printedBy, authors) {
             return {
                 id: this.collection.nextOrder(),
-                name: this.$input_new_name.val().trim(),
-                year: this.$input_new_year.val().trim(),
-                director: this.$input_new_director.val().trim(),
-                img: this.$input_new_img.val().trim(),
-                cast: this.$input_new_cast.val().trim(),
-                sinopsis: this.$input_new_sinopsis.val().trim(),
+                title: title,
+                price: price,
+                publisher: publisher,
+                cover: cover,
+                country: country,
+                argument: argument,
+                printedBy: printedBy,
+                authors: authors,
+                inCart: false
             };
         },
 
-        create_movie: function (event) {
+        addItem: function (title, price, publisher, cover, country, argument, printedBy, authors) {
             //var myJSON = JSON.parse('{"id": 3, "name"  : "The Italian Job", "year": "1969", "director": "Peter Collinson","img" : "http:\/\/ia.media-imdb.com/images/M/MV5BNTI1ODYwNzg3Nl5BMl5BanBnXkFtZTcwMDYzMjk3OA@@._V1_SX214_.jpg","cast" : "Michael Caine, Noel Coward, Benny Hill", "sinopsis" : "Charlies got a Job to do. Having just left prison, he finds one of his friends has attempted a high risk job in Italy right under the nose of the Mafia. Charlies friend doesnt get very far so Charlie takes over the Job. Using three Mini Coopers, a couple of Jaguars and a bus, he hopes to bring Torino to a standstill, steal the Gold and escape."}');
             //console.log(this.newAttributes());
-            this.collection.create(this.newAttributes());
-            this.$input_new_name.val('');
-            this.$input_new_director.val('');
-            this.$input_new_year.val('');
-            this.$input_new_cast.val('');
-            this.$input_new_sinopsis.val('');
-            this.$input_new_img.val('http://placehold.it/370x175');
-            this.view_movies_list();
+            this.collection.create(this.newAttributes(title, price, publisher, cover, country, argument, printedBy, authors));
         },
 
-        view_movies_list: function () {
-            this.$new_movie.hide();
-            this.$movies_list.show();
-        },
 
-        add_movie: function () {
-            this.$new_movie.show();
-            this.$movies_list.hide();
-        },
 
-        addOne: function (movie) {
-            var view = new MovieView({ model: movie });
-            this.$movies_list.append(view.render().el);
+        addOne: function (item) {
+            var view = new ItemView({ model: item });
+            this.$itemsList.append(view.render().el);
         },
 
         addAll: function () {
-            this.$movies_list.html('');
+            this.$itemsList.html('');
             this.collection.each(this.addOne, this);
+        },
+
+        viewData: function () {
+            console.log('view user data');
         }
 
     });
