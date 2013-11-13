@@ -9,14 +9,15 @@
         defaults: {
             id: 0,
             title: 'title',
-            price: '0.00',
+            price: 0,
             publisher: 'publisher',
             cover: 'http://placehold.it/370x75',
             country: 'country',
             argument: 'lorem ipsum dolor',
             printedBy: 'printedBy',
             authors: 'authors',
-            inCart: true
+            quantity: 0,
+            inCart: false
         },
 
         toggle: function () {

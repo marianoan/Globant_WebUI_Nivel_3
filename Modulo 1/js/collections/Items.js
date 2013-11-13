@@ -11,13 +11,11 @@
 
         localStorage: new localStorage('shoppingList'),
 
-        url: "data.json",
-
         nextOrder: function () {
             if (!this.length) {
                 return 1;
             }
-            return this.last().get('order') + 1;
+            return this.last().get('id') + 1;
         },
 
         inCart: function () {
@@ -25,6 +23,14 @@
                 return item.get('inCart');
             });
         },
+
+        customFilter: function () {
+            // reset the collection with the results
+            var results = this.where({
+                inCart: true
+            });
+            this.reset(results);
+        }
 
     });
     // You don't usually return a collection instantiated

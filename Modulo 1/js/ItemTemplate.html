@@ -1,0 +1,41 @@
+﻿<h4 class="alert_success" id="alert"></h4>
+<article class="module width_full">
+    <header>
+        <h3><%- title %></h3>
+        <input type="image" class="inCartIcon <% if (!inCart) { %> hidden <% } %>" id="inCartIcon" src="images/icn_basket.png" title="In cart">
+    </header>
+    <div class="module_content">
+        <article class="img_item">
+            <img src="<%- cover %>" alt="" width="290" height="540" />
+        </article>
+
+        <article class="item_detail">
+            <div class="module_content">
+                <h2>$<%- price %></h2>
+                <h3><%- publisher %></h3>
+                <h4><%- country %></h4>
+                <h4><%- printedBy %></h4>
+                <h4><%- authors %></h4>
+                <p><%- argument %></p>
+            </div>
+        </article>
+
+        <article class="item_price">
+            <div class="module_content">
+                <fieldset>
+                    <label>Quantity</label>
+                    <input type="text" id="quantity" value="1">
+                </fieldset>
+            </div>
+        </article>
+
+        <div class="clear"></div>
+    </div>
+    <footer>
+        <div class="addLink">
+            <input type="submit" value="Add to cart" class="addButton<% if (inCart) { %> hidden <% } %>">
+            <input type="submit" value="Modify" id="modifyButton" <% if (!inCart) { %> class="hidden" <% } %> >
+            <input type="submit" value="Delete" id="deleteButton" class="deleteButton <% if (!inCart) { %> hidden <% } %>">
+        </div>
+    </footer>
+</article><!-- end of stats article -->

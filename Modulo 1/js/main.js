@@ -21,8 +21,8 @@
 require([
 
   // Load our app module and pass it to our definition function
-  'App',
-], function (App) {
+  'router',
+], function (Router) {
     // The "app" dependency is passed in as "App"
-    new App();
+    new Router();
 });
