@@ -24,7 +24,7 @@
             <div class="module_content">
                 <fieldset>
                     <label>Quantity</label>
-                    <input type="text" id="quantity" value="1">
+                    <input type="text" id="quantity" value="<% if (quantity === 0) { %>1<% } else { %><%- quantity %><% } %>">
                 </fieldset>
             </div>
         </article>

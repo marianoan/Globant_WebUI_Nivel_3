@@ -153,6 +153,36 @@ color: #666666}
 color: #77BACE;
 }
 
+section#secondary_bar .back {
+float: left;
+width: 23%;
+height: 38px;
+}
+
+.back p {
+margin: 0;
+padding: 0;
+color: #666666;
+font-weight: bold;
+display: block;
+float: left;
+width: 85%;
+height: 35px;
+line-height: 35px;
+text-indent: 25px;
+text-shadow: 0 1px 0 #fff;
+background: url(../images/icn_jump_back.png) no-repeat center left;
+margin-left: 6%;
+}
+
+.back a {
+text-decoration: none;
+color: #666666}
+
+.back a:hover {
+color: #77BACE;
+}
+
 
 /* Breadcrumbs */
 

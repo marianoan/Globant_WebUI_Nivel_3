@@ -1,4 +1,7 @@
-﻿require.config({
+﻿/*
+* @Author: Mariano Gonzalez
+*/
+require.config({
     shim: {
         underscore: {
             exports: '_'
@@ -20,9 +23,9 @@
 
 require([
 
-  // Load our app module and pass it to our definition function
+  //Load our app module and pass it to our definition function
   'router',
 ], function (Router) {
-    // The "app" dependency is passed in as "App"
+    //The "app" dependency is passed in as "App"
     new Router();
 });

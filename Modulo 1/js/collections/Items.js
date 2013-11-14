@@ -1,4 +1,7 @@
-﻿define([
+﻿/*
+* @Author: Mariano Gonzalez
+*/
+define([
   'underscore',
   'backbone',
   'localStorage',

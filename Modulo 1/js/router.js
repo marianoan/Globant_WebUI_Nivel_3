@@ -16,12 +16,12 @@
         },
 
         cart: function () {
-           app.changeTitle('Shopping Cart');
+           app.setCartView();
            app.collection.customFilter();
        },
 
         index: function () {
-           app.changeTitle('default');
+           app.setDefaultView();
            app.collection.fetch();
        }
     });
