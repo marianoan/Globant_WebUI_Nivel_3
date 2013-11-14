@@ -471,43 +471,11 @@ margin-top:10px;
 border-radius: 5px;
 }
 
-.movie_edit_detail {
-background: #F6F6F6;
-border: 1px solid #ccc;
-float: right;
-width: 60%;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-display:none;
-}
 
 .overview_today, .overview_previous {
 width: 50%;
 float: left;}
 
-.movie_detail p {
-margin: 0; padding: 0;
-text-align:justify;
-text-transform: uppercase;
-text-shadow: 0 1px 0 #fff;
-}
-
-.movie_detail p.overview_day {
-font-size: 12px;
-font-weight: bold;
-margin: 6px 0;
-}
-
-.movie_detail p.overview_count {
-font-size: 26px;
-font-weight: bold;
-color: #333333;}
-
-.movie_detail p.overview_type {
-font-size: 10px;
-color: #999999;
-margin-bottom: 8px}
 
 /* Content Manager */
 
@@ -671,7 +639,7 @@ color: #001217;
 }
 
 
-/* New/Edit contact Module */
+/* New/Edit  Module */
 
 fieldset {
 -webkit-border-radius: 5px;
