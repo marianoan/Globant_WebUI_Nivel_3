@@ -7,9 +7,8 @@ define([
   'backbone',
   'collections/Items',
   'views/ItemView',
-  'models/Item',
-  'router'
-], function ($, _, Backbone, Items, ItemView, Item, Router) {
+  'models/Item'
+], function ($, _, Backbone, Items, ItemView, Item) {
 
     return Backbone.View.extend({
 
