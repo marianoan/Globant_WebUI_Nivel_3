@@ -6,9 +6,9 @@
     </header>
     <div class="module_content">
         <article class="img_item">
-            <img src="<%- cover %>" alt="" class="cover" />
+            <img src="<%- cover %>" alt="" width="290" height="540" />
         </article>
-        <div class="clear resp"></div>
+
         <article class="item_detail">
             <div class="module_content">
                 <h2>$<%- price %></h2>
@@ -16,21 +16,23 @@
                 <h4>Country: <%- country %></h4>
                 <h4>Printed By: <%- printedBy %></h4>
                 <h4>Authors:  <%- authors %></h4>
-                <h4>Authors:  <%- quantity %></h4>
                 <p><%- argument %></p>
             </div>
         </article>
+
+        <article class="item_price">
+            <div class="module_content">
+                <fieldset>
+                    <label>Quantity</label>
+                    <input type="text" id="quantity" value="<% if (quantity === 0) { %>1<% } else { %><%- quantity %><% } %>">
+                </fieldset>
+            </div>
+        </article>
+
         <div class="clear"></div>
     </div>
     <footer>
         <div class="addLink">
-            <select id="quantity" name="quantity">
-                <option value="1"<% if (quantity <= '1') { %> selected <% } %> >1</option>
-                <option value="2"<% if (quantity == '2') { %> selected <% } %> >2</option>
-                <option value="3"<% if (quantity == '3') { %> selected <% } %> >3</option>
-                <option value="4"<% if (quantity == '4') { %> selected <% } %> >4</option>
-                <option value="5"<% if (quantity == '5') { %> selected <% } %> >5</option>
-            </select>
             <input type="submit" value="Add to cart" class="addButton<% if (inCart) { %> hidden <% } %>">
             <input type="submit" value="Modify" id="modifyButton" <% if (!inCart) { %> class="hidden" <% } %> >
             <input type="submit" value="Delete" id="deleteButton" class="deleteButton <% if (!inCart) { %> hidden <% } %>">

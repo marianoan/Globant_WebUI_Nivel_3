@@ -3,11 +3,11 @@
 */
 
 define([
-  'jquery',
+  'tooltipster',
   'underscore',
   'backbone',
   'models/Item',
-  'text!ItemTemplate.html'
+  'text!CartItemTemplate.html'
 ], function ($, _, Backbone, Item, ItemTemplate) {
 
     var ItemView = Backbone.View.extend({
@@ -17,13 +17,13 @@ define([
 
         //Items events
         events: {
-            'click .addButton': 'addToCart',
             'click #alert': 'closeAlert',
             'click #modifyButton': 'modifyQuantity',
             'click #deleteButton': 'removeFromCart'
         },
 
         initialize: function () {
+            //console.log('cart');
             this.listenTo(this.model, 'destroy', this.remove);
             this.template = _.template(ItemTemplate);
         },
@@ -52,18 +52,6 @@ define([
             this.$alert.hide();
         },
 
-        //add the item to cart
-        addToCart: function () {
-            var quantity = this.$('#quantity').val().trim();
-            this.$alert.html('The item has been added to the cart');
-            this.$alert.show();
-            this.$inCartIcon.show();
-            this.$modifyButton.show();
-            this.$deleteButton.show();
-            this.$addButton.hide();
-            this.model.save({ quantity: quantity });
-            this.model.toggle();
-        },
 
         //Modify quantity of items purchased
         modifyQuantity: function () {
@@ -78,13 +66,12 @@ define([
             this.model.toggle();
             this.model.save({ quantity: 0 });
             this.$quantity.val('1');
-            //window.app.collection.customFilter();
+            window.app.collection.customFilter();
             this.$alert.html('The item has removed from your cart');
             this.$alert.show();
             this.$inCartIcon.hide();
             this.$modifyButton.hide();
             this.$deleteButton.hide();
-            this.$addButton.show();
         }
 
 

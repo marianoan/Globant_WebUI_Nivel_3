@@ -27,18 +27,6 @@ define([
             });
         },
 
-        totalInCart: function () {
-            var item;
-            var total = 0;
-            for (var i = 0; i < this.length; i++) {
-                item = this.models[i];
-                if (item.get('inCart')) {
-                    total += (item.get('price') * item.get('quantity'));
-                }
-            }
-            return total;
-        },
-
         customFilter: function () {
             // reset the collection with the results
             var results = this.where({

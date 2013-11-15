@@ -125,7 +125,7 @@ background: #F1F1F4 url(../images/secondary_bar.png) repeat-x;
 
 section#secondary_bar .action {
 float: left;
-width: 100%;
+width: 23%;
 height: 38px;
 }
 
@@ -142,7 +142,7 @@ line-height: 35px;
 text-indent: 25px;
 text-shadow: 0 1px 0 #fff;
 background: url(../images/icn_basket.png) no-repeat center left;
-margin-left: 3%;
+margin-left: 6%;
 }
 
 .action a {
@@ -155,7 +155,7 @@ color: #77BACE;
 
 section#secondary_bar .back {
 float: left;
-width: 100%;
+width: 23%;
 height: 38px;
 }
 
@@ -172,7 +172,7 @@ line-height: 35px;
 text-indent: 25px;
 text-shadow: 0 1px 0 #fff;
 background: url(../images/icn_jump_back.png) no-repeat center left;
-margin-left: 3%;
+margin-left: 6%;
 }
 
 .back a {
@@ -442,34 +442,19 @@ margin-right: 0;
 float: left;
 }
 
-.title {
-    text-align:center;
-    background-color:#222222;
-    
-}
-
-#titleApp h3 {
-    color: #fff;
-    text-shadow: 0 -1px 0 #000;
-}
 /* Stats Module */
 
 .img_item {
-width: 100%;
+width: 34%;
 float: left;
 text-align: center;
-border: 1px solid #ccc;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
 }
 
 .item_detail {
-margin-top:10px;
 background: #F6F6F6;
 border: 1px solid #ccc;
 float: right;
-width: 100%;
+width: 60%;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;
@@ -732,35 +717,9 @@ border: 1px solid #77BACE;
 box-shadow: inset 0 2px 2px #ccc, 0 0 10px #ADDCE6;
 }
 
-select {
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-border: 1px solid #BBBBBB;
-height: 20px;
-color: #666666;
--webkit-box-shadow: inset 0 2px 2px #ccc, 0 1px 0 #fff;
--moz-box-shadow: inset 0 2px 2px #ccc, 0 1px 0 #fff;
-box-shadow: inset 0 2px 2px #ccc, 0 1px 0 #fff;
-padding-left: 10px;
-background-position: 10px 6px;
-margin: 0;
-display: block;
-float: left;
-margin: 0 10px;
-}
-
-select:focus {
-outline: none;
-border: 1px solid #77BACE;
--webkit-box-shadow: inset 0 2px 2px #ccc, 0 0 10px #ADDCE6;
--moz-box-shadow: inset 0 2px 2px #ccc, 0 0 10px #ADDCE6;
-box-shadow: inset 0 2px 2px #ccc, 0 0 10px #ADDCE6;
-}
-
 fieldset select {
-width: 90%;
-margin: 10px;
+width: 96%;
+margin: 0 10px;
 border: 1px solid #bbb;
 height: 20px;
 color: #666666;
@@ -916,23 +875,4 @@ font-size: 14px;}
 .edit {
     margin-top: 5px;
     margin-right: 5px;
-}
-
-.cover {
-    width:100%;
-}
-
-@media only screen and (min-width:500px) {
-  .resp{
-    display:none;
-    }
-
-  .img_item {
-    width: 35%;
-    }
-
-    .item_detail {
-    margin-top:0px;
-    width: 64%;
-    }
 }

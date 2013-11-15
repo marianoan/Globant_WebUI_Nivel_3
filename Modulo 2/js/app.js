@@ -7,9 +7,8 @@ define([
   'backbone',
   'collections/Items',
   'views/ItemView',
-  'views/CartItemView',
   'models/Item'
-], function ($, _, Backbone, Items, ItemView, CartItemView, Item) {
+], function ($, _, Backbone, Items, ItemView, Item) {
 
     return Backbone.View.extend({
 
@@ -23,7 +22,7 @@ define([
         initialize: function () {
             this.collection = new Items();
             this.resetItems();
-            this.route = 'index';
+
             this.$itemsList = this.$('#itemsList');
             this.$titleApp = this.$('#titleApp');
             this.$secondary_bar = this.$('#secondary_bar');
@@ -37,14 +36,12 @@ define([
 
             this.listenTo(this.collection, 'add', this.addOne);
             this.listenTo(this.collection, 'reset', this.addAll);
-            this.listenTo(this.collection, 'change', this.updateCart);
 
 
             this.collection.fetch();
 
             this.addAll();
         },
-
 
         //Atributos para un nuevo contacto
         newAttributes: function (title, price, publisher, cover, country, argument, printedBy, authors) {
@@ -70,23 +67,8 @@ define([
 
 
         addOne: function (item) {
-            if (this.route === 'index') {
-                console.log('index');
-                var view = new ItemView({ model: item });
-                
-            } else {
-                console.log('cart');
-                var view = new CartItemView({ model: item });
-            }
+            var view = new ItemView({ model: item });
             this.$itemsList.append(view.render().el);
-            $('.tooltip').tooltipster();
-            
-        },
-
-        updateCart: function () {
-            if (this.route === 'cart') {
-                this.setCartView();
-            }
         },
 
         addAll: function () {
@@ -97,15 +79,12 @@ define([
 
 
         setDefaultView: function () {
-            this.route = 'index';
             this.$titleApp.html('<h3>Items that you can buy</h3>');
             this.$secondary_bar.html('<div class="action"><a href="#/cart"><p>View Cart</p></a></div>');
-            this.addAll();
         },
 
         setCartView: function () {
-            this.route = 'cart';
-            this.$titleApp.html('<h3>Items in Shopping Cart. Total: $' + this.collection.totalInCart() +'</h3>');
+            this.$titleApp.html('<h3>Shopping Cart</h3>');
             this.$secondary_bar.html('<div class="back"><a href="#"><p>Back to Items</p></a></div>');
         },
 

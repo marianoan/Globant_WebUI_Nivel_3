@@ -78,7 +78,7 @@ define([
             this.model.toggle();
             this.model.save({ quantity: 0 });
             this.$quantity.val('1');
-            //window.app.collection.customFilter();
+            window.app.collection.customFilter();
             this.$alert.html('The item has removed from your cart');
             this.$alert.show();
             this.$inCartIcon.hide();

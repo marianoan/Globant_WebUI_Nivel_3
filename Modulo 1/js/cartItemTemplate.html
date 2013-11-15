@@ -1,0 +1,20 @@
+﻿<h4 class="alert_success" id="alert"></h4>
+<article class="module width_full">
+    <h3>
+        <a id="itemTitle" class="tooltip" href="#/cart" title='<img src="<%- cover %>" width="150" height="200" />'><%- title %> $<%- price %></a>
+    </h3>
+    
+    <footer>
+        <div class="addLink">
+            <select id="quantity" name="quantity">
+                <option value="1"<% if (quantity <= '1') { %> selected <% } %> >1</option>
+                <option value="2"<% if (quantity == '2') { %> selected <% } %> >2</option>
+                <option value="3"<% if (quantity == '3') { %> selected <% } %> >3</option>
+                <option value="4"<% if (quantity == '4') { %> selected <% } %> >4</option>
+                <option value="5"<% if (quantity == '5') { %> selected <% } %> >5</option>
+            </select>
+            <input type="submit" value="Modify" id="modifyButton">
+            <input type="submit" value="Delete" id="deleteButton" class="deleteButton">
+        </div>
+    </footer>
+</article>

@@ -6,8 +6,7 @@
 	<title>SCA</title>
 	
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
-    <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+    <script src="js/modernizr.custom.99413.js"></script> 
     <script data-main="js/main" src="js/require.js"></script>
 </head>
 
@@ -26,7 +25,13 @@
 
     <section id="main" class="column">
 
-        <article class="module width_full title" id="titleApp">
+        <article class="module width_full">
+            <h3>
+                Si se usa como standalone app (sin un webserver), no usar Chrome ni IE debido a la restriccion para abrir archivos locales (cuando se carga el template de la vista de items).
+            </h3>
+        </article>
+        
+        <article class="module width_full" id="titleApp">
             
         </article>
 

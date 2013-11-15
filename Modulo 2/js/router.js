@@ -6,7 +6,7 @@
    return Backbone.Router.extend({
         routes: {
             'cart': 'cart',
-             '': 'index'
+            '': 'index'
         },
 
         initialize: function () {
@@ -18,13 +18,11 @@
         cart: function () {
            app.setCartView();
            app.collection.customFilter();
-           
        },
 
         index: function () {
            app.setDefaultView();
            app.collection.fetch();
-           
        }
     });
 
