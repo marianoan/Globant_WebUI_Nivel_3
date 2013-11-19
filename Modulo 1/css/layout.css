@@ -17,6 +17,10 @@ font-size: 12px;
 clear: both;
 }
 
+.separator {
+clear: none;
+}
+
 .spacer {
 height: 20px;
 }
@@ -425,7 +429,7 @@ width: 95%;
 }
 
 .width_half {
-width: 46%;
+width: 95%;
 margin-right: 0;
 float: left;
 }
@@ -922,7 +926,8 @@ font-size: 14px;}
     width:100%;
 }
 
-@media only screen and (min-width:500px) {
+
+@media only screen and (min-width:600px) {
   .resp{
     display:none;
     }
@@ -935,4 +940,20 @@ font-size: 14px;}
     margin-top:0px;
     width: 64%;
     }
+
 }
+
+
+@media only screen and (min-width:980px) {
+    .separator {
+        clear: both;
+        }
+
+    .width_half {
+        width: 46%;
+        margin-right: 0;
+        float: left;
+        }
+}
+
+

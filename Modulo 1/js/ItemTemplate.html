@@ -1,5 +1,5 @@
 ﻿<h4 class="alert_success" id="alert"></h4>
-<article class="module width_full">
+<article class="module width_half">
     <header>
         <h3><%- title %></h3>
         <input type="image" class="inCartIcon <% if (!inCart) { %> hidden <% } %>" id="inCartIcon" src="images/icn_basket.png" title="In cart">
@@ -37,3 +37,6 @@
         </div>
     </footer>
 </article><!-- end of stats article -->
+<% if (id % 2 === 0  ){ %>
+<div class="separator"></div>
+<% } %>
