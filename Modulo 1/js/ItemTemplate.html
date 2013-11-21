@@ -1,6 +1,4 @@
-﻿<h4 class="alert_success" id="alert"></h4>
-<article class="module width_half">
-    <header>
+﻿    <header>
         <h3><%- title %></h3>
         <input type="image" class="inCartIcon <% if (!inCart) { %> hidden <% } %>" id="inCartIcon" src="images/icn_basket.png" title="In cart">
     </header>
@@ -24,6 +22,8 @@
     </div>
     <footer>
         <div class="addLink">
+            <!--<label for="slider-0">Input slider:</label>
+            <input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />-->
             <select id="quantity" name="quantity">
                 <option value="1"<% if (quantity <= '1') { %> selected <% } %> >1</option>
                 <option value="2"<% if (quantity == '2') { %> selected <% } %> >2</option>
@@ -36,7 +36,3 @@
             <input type="submit" value="Delete" id="deleteButton" class="deleteButton <% if (!inCart) { %> hidden <% } %>">
         </div>
     </footer>
-</article><!-- end of stats article -->
-<% if (id % 2 === 0  ){ %>
-<div class="separator"></div>
-<% } %>

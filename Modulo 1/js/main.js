@@ -10,6 +10,10 @@ require.config({
             exports: "$",
             deps: ['jquery']
         },
+        jquerymobile: {
+            exports: "$",
+            deps: ['jquery']
+        },
         tooltipster: {
             exports: "$",
             deps: ['jquery']
@@ -23,6 +27,7 @@ require.config({
     paths: {
         jquery: 'jquery.min',
         jqueryui: 'jquery-ui-1.10.3.custom.min',
+        jquerymobile: 'jquery.mobile-1.1.0-rc.1.min',
         tooltipster: 'jquery.tooltipster.min',
         underscore: 'underscore-min',
         backbone: 'backbone-min',
@@ -32,10 +37,26 @@ require.config({
 });
 
 require([
+    'jquery',
+    'backbone',
+    'router',
+], function ($, Backbone,Router) {
+    
+    $(document).on("mobileinit",
+		// Set up the "mobileinit" handler before requiring jQuery Mobile's module
+		function () {
+		    // Prevents all anchor click handling including the addition of active button state and alternate link bluring.
+		    $.mobile.linkBindingEnabled = false;
 
-  //Load our app module and pass it to our definition function
-  'router',
-], function (Router) {
-    //The "app" dependency is passed in as "App"
+		    // Disabling this will prevent jQuery Mobile from handling hash changes
+		    $.mobile.hashListeningEnabled = false;
+		}
+	)
+
+    /*require(["jquerymobile"], function () {
+        // Instantiates a new Backbone.js Mobile Router
+        this.router = new Router();
+    });*/
+    
     new Router();
 });

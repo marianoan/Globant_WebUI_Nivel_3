@@ -17,6 +17,8 @@ define([
 
         //View events
         events: {
+            'click #alert': 'closeAlert',
+            'click #alertEmpty': 'closeAlertEmpty',
         },
 
         //Initialize the view
@@ -26,6 +28,8 @@ define([
             this.route = 'index';
             this.$itemsList = this.$('#itemsList');
             this.$titleApp = this.$('#titleApp');
+            this.$alert = this.$('#alert');
+            this.$alertEmpty = this.$('#alertEmpty');
             this.$secondary_bar = this.$('#secondary_bar');
 
             this.setDefaultView();
@@ -38,7 +42,6 @@ define([
             this.listenTo(this.collection, 'add', this.addOne);
             this.listenTo(this.collection, 'reset', this.addAll);
             this.listenTo(this.collection, 'change', this.updateCart);
-
 
             this.collection.fetch();
 
@@ -73,19 +76,30 @@ define([
             if (this.route === 'index') {
                 console.log('index');
                 var view = new ItemView({ model: item });
+                this.$itemsList.append(view.render().el);
+                if (item.get('id') % 2 === 0) {
+                    this.$itemsList.append('<div class="separator"></div>');
+                }
                 
             } else {
                 console.log('cart');
                 var view = new CartItemView({ model: item });
+                this.$itemsList.append(view.render().el);
             }
-            this.$itemsList.append(view.render().el);
+            
             $('.tooltip').tooltipster();
             
         },
 
         updateCart: function () {
             if (this.route === 'cart') {
-                this.setCartView();
+                if (this.collection.totalInCart() === 0) {
+                    this.$alertEmpty.html('The cart is empty!');
+                    this.$alertEmpty.show();
+                    location.href = "#";
+                } else {
+                    this.setCartView();
+                }
             }
         },
 
@@ -107,6 +121,15 @@ define([
             this.route = 'cart';
             this.$titleApp.html('<h3>Items in Shopping Cart. Total: $' + this.collection.totalInCart() +'</h3>');
             this.$secondary_bar.html('<div class="back"><a href="#"><p>Back to Items</p></a></div>');
+        },
+
+        //Close the alert
+        closeAlert: function () {
+            this.$alert.hide();
+        },
+
+        closeAlertEmpty: function () {
+            this.$alertEmpty.hide();
         },
 
         resetItems: function () {

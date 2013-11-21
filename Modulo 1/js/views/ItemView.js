@@ -13,12 +13,11 @@ define([
     var ItemView = Backbone.View.extend({
 
         tagName: 'article',
-        
+        className: 'module width_half',
 
         //Items events
         events: {
             'click .addButton': 'addToCart',
-            'click #alert': 'closeAlert',
             'click #modifyButton': 'modifyQuantity',
             'click #deleteButton': 'removeFromCart'
         },
@@ -31,7 +30,7 @@ define([
         //Renders the item
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$alert = this.$('#alert')
+            this.$alert = $('#alert')
             this.$inCartIcon = this.$('#inCartIcon');
             this.$modifyButton = this.$('#modifyButton');
             this.$deleteButton = this.$('#deleteButton');
@@ -47,10 +46,7 @@ define([
             this.model.destroy();
         },
 
-        //Close the alert
-        closeAlert: function () {
-            this.$alert.hide();
-        },
+       
 
         //add the item to cart
         addToCart: function () {
@@ -63,6 +59,7 @@ define([
             this.$addButton.hide();
             this.model.save({ quantity: quantity });
             this.model.toggle();
+            Backbone.history.navigate('#');
         },
 
         //Modify quantity of items purchased
@@ -71,6 +68,7 @@ define([
             this.model.save({ quantity: quantity });
             this.$alert.html('The quantity has been updated');
             this.$alert.show();
+            Backbone.history.navigate('#');
         },
 
         //Remove item from cart
@@ -85,6 +83,7 @@ define([
             this.$modifyButton.hide();
             this.$deleteButton.hide();
             this.$addButton.show();
+            Backbone.history.navigate('#');
         }
 
 

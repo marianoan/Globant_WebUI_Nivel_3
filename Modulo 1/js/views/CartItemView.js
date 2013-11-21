@@ -13,6 +13,7 @@ define([
     var ItemView = Backbone.View.extend({
 
         tagName: 'article',
+        className: 'module width_full',
         
 
         //Items events
@@ -31,7 +32,7 @@ define([
         //Renders the item
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$alert = this.$('#alert')
+            this.$alert = $('#alert')
             this.$inCartIcon = this.$('#inCartIcon');
             this.$modifyButton = this.$('#modifyButton');
             this.$deleteButton = this.$('#deleteButton');

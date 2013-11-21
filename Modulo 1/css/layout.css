@@ -910,7 +910,8 @@ border: 1px solid #79C20D;
 color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
-font-size: 14px;}
+font-size: 14px;
+}
 
 .hidden{
     display:none;

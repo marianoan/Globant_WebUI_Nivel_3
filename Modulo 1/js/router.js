@@ -1,7 +1,8 @@
 ﻿define([
+    'jquery',
     'backbone',
     'app'
-], function (Backbone, App) {
+], function ($, Backbone, App) {
 
    return Backbone.Router.extend({
         routes: {
@@ -22,10 +23,13 @@
        },
 
         index: function () {
-           app.setDefaultView();
-           app.collection.fetch();
+            //$.mobile.changePage("#cart", { reverse: false, changeHash: false });
+            //$.mobile.loading("show");
+            app.collection.fetch();
+            app.setDefaultView();
            
        }
     });
 
 });
+
