@@ -1,8 +1,9 @@
 ﻿define([
     'jquery',
+    'jquerymobile',
     'backbone',
     'app'
-], function ($, Backbone, App) {
+], function ($, jquerymobile, Backbone, App) {
 
    return Backbone.Router.extend({
         routes: {
@@ -29,7 +30,16 @@
             app.setDefaultView();
            
        }
-    });
+   });
+
+   define(['jquery'], function ($) {
+       $(document).on("mobileinit", function () {
+           $.mobile.ajaxEnabled = false;
+           $.mobile.linkBindingEnabled = false;
+           $.mobile.hashListeningEnabled = false;
+           $.mobile.pushStateEnabled = false;
+       });
+   });
 
 });
 
