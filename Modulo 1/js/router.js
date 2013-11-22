@@ -18,27 +18,18 @@
         },
 
         cart: function () {
+           //$.mobile.changePage("#cart", { reverse: false, changeHash: false });
            app.setCartView();
            app.collection.customFilter();
            
        },
 
         index: function () {
-            //$.mobile.changePage("#cart", { reverse: false, changeHash: false });
-            //$.mobile.loading("show");
+            //$.mobile.changePage("#", { reverse: false, changeHash: false });
             app.collection.fetch();
             app.setDefaultView();
            
        }
-   });
-
-   define(['jquery'], function ($) {
-       $(document).on("mobileinit", function () {
-           $.mobile.ajaxEnabled = false;
-           $.mobile.linkBindingEnabled = false;
-           $.mobile.hashListeningEnabled = false;
-           $.mobile.pushStateEnabled = false;
-       });
    });
 
 });

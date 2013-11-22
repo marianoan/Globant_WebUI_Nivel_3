@@ -23,6 +23,20 @@ define([
 
         //Initialize the view
         initialize: function () {
+
+            //Mobile init
+            $.mobile.ajaxEnabled = false;
+            // Let Backbone handle click events 
+            $.mobile.linkBindingEnabled = false;
+            $.mobile.listview.prototype.options.icon = "";
+            // Don't listen to hash changes. Let backbone do this
+            $.mobile.hashListeningEnabled = false;
+            $.mobile.pushStateEnabled = false;
+            // No hoverdelay for buttons. Use FastClick for 0 delay a tags
+            $.mobile.buttonMarkup.hoverDelay = 0;
+            // Disable button styling out of the box. Only style if specified
+            //$.mobile.button.prototype.options.initSelector = ".jquery-button";
+
             this.collection = new Items();
             this.resetItems();
             this.route = 'index';
@@ -113,7 +127,7 @@ define([
         setDefaultView: function () {
             this.route = 'index';
             this.$titleApp.html('<h3>Items that you can buy</h3>');
-            this.$secondary_bar.html('<div class="action"><a href="#/cart"><p>View Cart</p></a></div>');
+            this.$secondary_bar.html('<div class="action"><a href="#cart"><p>View Cart</p></a></div>');
             this.addAll();
         },
 

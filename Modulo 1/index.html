@@ -6,39 +6,36 @@
 	<title>SCA</title>
 	
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
-    <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
     <link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
     <script data-main="js/main" src="js/require.js"></script>
 </head>
 
 <body id="shoppingCartApp">
-    <header id="header">
-        <hgroup>
-            <h2 class="section_title">Shopping Cart App</h2>
-        </hgroup>
-    </header> <!-- end of header bar -->
+    <div data-role="page">
+        <header id="header" data-role="header">
+            <hgroup>
+                <h2 class="section_title">Shopping Cart App</h2>
+            </hgroup>
+        </header> <!-- end of header bar -->
 
-    <section id="secondary_bar">
-        <div class="action">
-            <a href="#/cart"><p>View Cart</p></a>
-        </div>
-    </section>
+        <section id="secondary_bar">
+            <div class="action">
+                <a href="#cart"><p>View Cart</p></a>
+            </div>
+        </section>
 
-    <section id="main" class="column">
+        <section id="main" class="column" data-role="content">
 
-        <article class="module width_full title" id="titleApp">
-            
-        </article>
-        <h4 class="alert_success" id="alert"></h4>
-        <h4 class="alert_info" id="alertEmpty"></h4>
-        <div id="itemsList">
-            
-            
-        </div>
+            <article class="module width_full title" id="titleApp"></article>
+            <h4 class="alert_success" id="alert"></h4>
+            <h4 class="alert_info" id="alertEmpty"></h4>
+            <div id="itemsList">
 
-        <div class="spacer"></div>
-    </section>
+            </div>
 
+            <div class="spacer"></div>
+        </section>
+    </div>
 </body>
 </html>
